@@ -1,0 +1,29 @@
+{
+  "name": "SwalVue",
+  "version": "1.0.0",
+  "description": "Add SweetAlerts to Vue. Also allows to use components directly in the modal window.",
+  "main": "index.js",
+  "repository": "https://github.com/bi0nd0/swal-vue.git",
+  "author": "Francesco Delacqua",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "rm -rf ./dist && webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "sweetalert2": "^8.12.1",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  }
+}
