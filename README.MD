@@ -21,7 +21,7 @@ import SwalVue from 'swal-vue';
 Vue.use(SwalVue);
 ```
 
-Now in the global object, you can access all the methods of [sweetalert2](https://github.com/limonte/sweetalert2).
+Now you can use SweetAlert2 in your Vue project [sweetalert2](https://github.com/limonte/sweetalert2).
 
 If you want to add global options like button colors, do something like this:
 ```js
@@ -90,4 +90,4 @@ export default {
 Vue.$swal('Hello world!');
 ```
 
-## The documentation for `sweetalert2`, you can find [here](https://sweetalert2.github.io/).
+## [`sweetalert2` documentation] (https://sweetalert2.github.io/)
