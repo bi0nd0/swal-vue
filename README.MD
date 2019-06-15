@@ -23,21 +23,6 @@ Vue.use(SwalVue);
 
 Now you can use SweetAlert2 in your Vue project [sweetalert2](https://github.com/limonte/sweetalert2).
 
-If you want to add global options like button colors, do something like this:
-```js
-// main.js
-import Vue from 'vue';
-import SwalVue from 'swal-vue';
-
-const options = {
-  confirmButtonColor: '#41b882',
-  cancelButtonColor: '#ff7674'
-}
-
-Vue.use(SwalVue, options)
-```
-
-
 ```html
 // vue-component.vue
 <template>
