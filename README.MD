@@ -27,6 +27,8 @@ Now you can use SweetAlert2 in your Vue project [sweetalert2](https://github.com
 // vue-component.vue
 <template>
     <button @click="showAlert">Hello world</button>
+    <button @click="showAlertWithComponent('hello')">Hello world, again</button>
+    <button @click="showAlertWithComponent2('hello')">Hello world, another time</button>
 </template>
 
 <script>
@@ -42,28 +44,34 @@ export default {
                 text: 'hi from swal-vue',
             })
         },
-        showAlertWithComponnet(){
+        /**
+         * include a Vue component in the modal
+         */
+        showAlertWithComponent(message){
             // Use sweetalert2
             this.$swal.fire({
                 type: 'success',
                 title: 'Hello world',
                 text: 'hi from swal-vue',
                 component: anotherVueComponent,
-                componentArgs: {propsData: {msg: 'hello world'}}
+                componentArgs: {propsData: {msg: message}}
             })
-            // if you need access to the componnet
-            const componnet = this.$swal.getComponent()
+            // if you need access to the component
+            const component = this.$swal.getComponent()
         },
-        showAlertWithComponnet2(){
+        /**
+         * another way to include a Vue component in the modal
+         */
+        showAlertWithComponent2(message){
             // Use sweetalert2
             this.$swal.fire({
                 type: 'success',
                 title: 'Hello world',
                 text: 'hi from swal-vue',
             })
-            this.$swal.addVueComponent(anotherVueComponent, {propsData: {msg: 'hello world'}})
-            // if you need access to the componnet
-            const componnet = this.$swal.getComponent()
+            this.$swal.addVueComponent(anotherVueComponent, {propsData: {msg: message}})
+            // if you need access to the component
+            const component = this.$swal.getComponent()
         }
     }
 }
