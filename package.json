@@ -7,6 +7,16 @@
   "author": "Francesco Delacqua",
   "license": "MIT",
   "private": false,
+  "keywords": [
+    "sweetalert",
+    "sweetalert2",
+    "vue",
+    "alert",
+    "prompt",
+    "modal",
+    "dialog",
+    "plugin"
+  ],
   "scripts": {
     "build": "rm -rf ./dist && webpack --config webpack.config.js"
   },
