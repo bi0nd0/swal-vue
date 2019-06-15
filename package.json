@@ -1,8 +1,8 @@
 {
-  "name": "SwalVue",
+  "name": "swal-vue",
   "version": "1.0.0",
   "description": "Add SweetAlerts to Vue. Also allows to use components directly in the modal window.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/bi0nd0/swal-vue.git",
   "author": "Francesco Delacqua",
   "license": "MIT",
