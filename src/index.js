@@ -45,19 +45,6 @@ Swal.getComponent = function() {
     return this.component || null
 }
 
-class SwalVue {
-    constructor(Swal) {
-        // keep a reference to the original method
-        this.Swal = Swal
-        this._fire = Swal.fire
-    }
-
-
-}
-
-
-
-
 export default {
     install(Vue) {
         // set a global reference

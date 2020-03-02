@@ -1,6 +1,6 @@
 {
   "name": "swal-vue",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Add SweetAlerts to Vue. Also allows to use components directly in the modal window.",
   "main": "dist/index.js",
   "repository": "https://github.com/bi0nd0/swal-vue.git",
@@ -21,7 +21,7 @@
     "build": "rm -rf ./dist && webpack --config webpack.config.js"
   },
   "dependencies": {
-    "sweetalert2": "^8.12.1",
+    "sweetalert2": "^9.8.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
