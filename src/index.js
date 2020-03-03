@@ -9,16 +9,12 @@ import Swal from 'sweetalert2/dist/sweetalert2.min.js'
  * @param {Object} component a vue component definition
  * @param {Object} args arguments to pass to the component on creation (propsData, etc...)
  */
-Swal.addVueComponent = function(component, args={}) {
-    const content = this.getContent()
-    const componentContainer = document.createElement('div')
-    componentContainer.classList.add('vue-component')
-    content.appendChild(componentContainer)
+Swal.addVueComponent = function(vue_component, args={}) {
     try {
-        const vueConstructor = Vue.extend(component)
-        const vueInstance = new vueConstructor(args)
-        vueInstance.$mount(componentContainer)
-        return vueInstance
+        const content = this.getContent()
+        const container = document.createElement('div')
+        content.appendChild(container)
+        this.component = new vue_component(args).$mount(container)
     } catch (error) {
         console.log('error inserting the vue component', error)
     }
@@ -28,13 +24,11 @@ Swal.addVueComponent = function(component, args={}) {
  * store a reference to the component instance in the component variable
  */
 Swal._fire = Swal.fire // keep a reference to the original method
-Swal.fire = function(settings) {
-    this.component = null // reset the component reference
-    const component = settings.component || null
+Swal.fire = function({component=null, component_args={}, ...settings}) {
     const modal = this._fire(settings)
     if(component) {
-        const args = settings.componentArgs || {}
-        this.component = this.addVueComponent(component, args)
+        if(typeof component != 'function') console.log('You must provide a VueComponent')
+        this.component = this.addVueComponent(component, component_args)
     }
     return modal
 }
