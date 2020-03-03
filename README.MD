@@ -54,7 +54,7 @@ export default {
                 title: 'Hello world',
                 text: 'hi from swal-vue',
                 component: anotherVueComponent,
-                componentArgs: {propsData: {msg: message}}
+                component_args_: {propsData: {msg: message}}
             })
             // if you need access to the component
             const component = this.$swal.getComponent()
