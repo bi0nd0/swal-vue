@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import {default as Vue} from 'vue'
 import 'sweetalert2/dist/sweetalert2.min.css'
 import Swal from 'sweetalert2/dist/sweetalert2.min.js'
 
@@ -11,10 +11,15 @@ import Swal from 'sweetalert2/dist/sweetalert2.min.js'
  */
 Swal.addVueComponent = function(vue_component, args={}) {
     try {
+        // make sure we have a Vue constructor
+        if(typeof vue_component==='object') {
+            vue_component = Vue.extend(vue_component)
+        }
         const content = this.getContent()
         const container = document.createElement('div')
         content.appendChild(container)
         this.component = new vue_component(args).$mount(container)
+        return this.component // return a reference to the component
     } catch (error) {
         console.log('error inserting the vue component', error)
     }
