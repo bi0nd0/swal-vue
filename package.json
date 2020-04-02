@@ -21,8 +21,7 @@
     "build": "rm -rf ./dist && webpack --config webpack.config.js"
   },
   "dependencies": {
-    "sweetalert2": "^9.8.2",
-    "vue": "^2.6.10"
+    "sweetalert2": "^9.8.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
